@@ -13,27 +13,27 @@ Problem Description:
     who are turning rabbits into zombies. He sends a text transmission to you,
     but it is intercepted by a pirate, who jumbles the message by repeatedly
     inserting the same word into the text some number of times. At each step,
-    he might have inserted the word anywhere, including at the beginning or end,
-    or even into a copy of the word he inserted in a previous step. By offering
-    the pirate a dubloon, you get him to tell you what that word was. A few
-    bottles of rum later, he also tells you that the original text was the
-    shortest possible string formed by repeated removals of that word, and that
-    the text was actually the lexicographically earliest string from all the
-    possible shortest candidates. Using this information, can you work out what
-    message your spy originally sent?
+    he might have inserted the word anywhere, including at the beginning or
+    end, or even into a copy of the word he inserted in a previous step. By
+    offering the pirate a dubloon, you get him to tell you what that word was.
+    A few bottles of rum later, he also tells you that the original text was
+    the shortest possible string formed by repeated removals of that word, and
+    that the text was actually the lexicographically earliest string from all
+    the possible shortest candidates. Using this information, can you work out
+    what message your spy originally sent?
 
     For example, if the final chunk of text was "lolol," and the inserted word
     was "lol," the shortest possible strings are "ol" (remove "lol" from the
-    beginning) and "lo" (remove "lol" from the end). The original text therefore
-    must have been "lo," the lexicographically earliest string.
+    beginning) and "lo" (remove "lol" from the end). The original text
+    therefore must have been "lo," the lexicographically earliest string.
 
     Write a function called answer(chunk, word) that returns the shortest,
-    lexicographically earliest string that can be formed by removing occurrences
-    of word from chunk. Keep in mind that the occurrences may be nested, and
-    that removing one occurrence might result in another. For example, removing
-    "ab" from "aabb" results in another "ab" that was not originally present.
-    Also keep in mind that your spy's original message might have been an empty
-    string.
+    lexicographically earliest string that can be formed by removing
+    occurrences of word from chunk. Keep in mind that the occurrences may be
+    nested, and that removing one occurrence might result in another. For
+    example, removing "ab" from "aabb" results in another "ab" that was not
+    originally present. Also keep in mind that your spy's original message
+    might have been an empty string.
 
     chunk and word will only consist of lowercase letters [a-z].
     chunk will have no more than 20 characters.
@@ -62,42 +62,9 @@ Problem Description:
         (string) "dogfood"
 
     Use verify [file] to test your solution and see how it does. When you are
-    finished editing your code, use submit [file] to submit your answer. If your
-    solution passes the test cases, it will be removed from your home folder.
-
---------------------------------------------------------------------------------
-
-SOLUTION: Tree Data Structure
-
-    Description: A tree structure is generated from all possible
-                 combinations. The "del i" command simply means
-                 "delete" the given "word" at the "ith" instance.
-
-                 Example:
-
-                     chunk = lololololo
-                     word = lol
-
-                         lololololo
-                              |
-                      - del 1 |_olololo
-
-                      NOTE: del 1 removed "lol"olololo
-                            from the chunk, leaving the
-                            remaining "olololo" chunk
-
-    FULL SOLUTION:
-
-        lololololo
-            |
- -split 1   |________oloo
-            |
- -split 2   |________looo
-            |
- -split 3   |________oolo
-            |
- -split 4   |________looo
-
+    finished editing your code, use submit [file] to submit your answer. If
+    your solution passes the test cases, it will be removed from your home
+    folder.
 '''
 # libs
 import sys
@@ -105,9 +72,6 @@ import sys
 
 # funcs
 def answer(chunk, word):
-
-    # print initial start
-    print 'Starting Values: {0} {1}'.format(chunk, word)
 
     # messages
     messages = []

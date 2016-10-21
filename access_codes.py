@@ -11,7 +11,8 @@ Problem Description:
 
     You've discovered the evil laboratory of Dr. Boolean, and you've found that
     the vile doctor is transforming your fellow rabbit kin into terrifying
-    rabbit-zombies! Naturally, you're less-than-happy about this turn of events.
+    rabbit-zombies! Naturally, you're less-than-happy about this turn of
+    events.
 
     Of course where there's a will, there's a way. Your top-notch assistant,
     Beta Rabbit, managed to sneak in and steal some access codes for
@@ -32,8 +33,8 @@ Problem Description:
     The list ["abc," "cba," "bac"] has 2 distinct access codes in it.
 
     Write a function answer(x) which takes a list of access code strings, x,
-    and returns the number of distinct access code strings using this definition
-    of identical.
+    and returns the number of distinct access code strings using this
+    definition of identical.
 
     Languages
     =========
@@ -63,6 +64,7 @@ Problem Description:
 # libs
 import sys
 
+
 # functions
 def answer(x):
 
@@ -87,12 +89,11 @@ def answer(x):
         for i, m in enumerate(matches):
             del x[m-i:m-i+1]
 
-
         # print results
         print 'Start: {0} | Values: {1}'.format(x[start], x)
 
         # next
-        start+=1
+        start += 1
 
     # return distinct access codes
     return len(x)

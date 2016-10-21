@@ -90,6 +90,7 @@ Problem Description:
 # libs
 import sys
 
+
 # func
 def answer(population, x, y, strength):
 
@@ -140,7 +141,6 @@ def answer(population, x, y, strength):
 
         # else return
         return
-
 
     # initial infection attempt
     z = population[y][x]
