@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: access_codes -case1 | -case2 | -case3
+Usage: access_codes -case1|case2|case3
 Origin: Google "foo.bar" project - Problem 2.2
 Problem Description:
 
@@ -83,14 +83,9 @@ def answer(x):
             elif x[start][::-1] == x[i]:
                 matches.append(i)
 
-        print 'Start: {0} | Matches: {1}'.format(x[start], matches)
-
         # delete matches
         for i, m in enumerate(matches):
             del x[m-i:m-i+1]
-
-        # print results
-        print 'Start: {0} | Values: {1}'.format(x[start], x)
 
         # next
         start += 1
@@ -115,3 +110,6 @@ if __name__ == '__main__':
         elif sys.argv[1] == '-case3':
             x = ["a", "b", "c", "a", "a", "foo", "bar", "foo", "oof", "rab"]
             print answer(x)
+
+    else:
+        sys.exit('\nusage: access_codes -case1|case2|case3\n')

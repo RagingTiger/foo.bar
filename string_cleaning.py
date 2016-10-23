@@ -129,4 +129,4 @@ if __name__ == '__main__':
             sys.exit()
 
     sys.exit('\nusage: string_cleaning [-m chunk word]'
-             ' -case1|case2|case3')
+             ' -case1|case2|case3\n')

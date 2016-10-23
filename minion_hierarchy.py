@@ -2,8 +2,8 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: minion_hierarchy
-Origin: Google "foo.bar" project - Problem 1.0
+Usage: minion_hierarchy (int)
+Origin: Google "foo.bar" project - Problem 1.1
 Program Description:
 
     Minion hierarchy
@@ -79,3 +79,6 @@ if __name__ == '__main__':
 
     if len(sys.argv) == 2:
         print answer(int(sys.argv[1]))
+
+    else:
+        sys.exit('\nusage: minion_hierarchy (int)\n')

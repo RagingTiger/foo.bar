@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Program: zombit_infection.py
+Program: zombit_infection.py -case1|case1
 Origin: Google "foo.bar" project - Problem 2.1
 Problem Description:
 
@@ -178,4 +178,4 @@ if __name__ == '__main__':
         print answer(population, x, y, strength)
 
     else:
-        print 'usage: zombit_infection -case1 | -case2'
+        print '\nusage: zombit_infection -case1|case2\n'

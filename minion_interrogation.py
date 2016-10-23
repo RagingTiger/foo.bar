@@ -151,4 +151,4 @@ if __name__ == '__main__':
             print answer(ex4)
 
     else:
-        sys.exit('\nusage: minion_interrogation -case1|case2|case3|case4')
+        sys.exit('\nusage: minion_interrogation -case1|case2|case3|case4\n')

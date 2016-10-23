@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: hash_it_out
+Usage: hash_it_out -case1|case2
 Origin: Google "foo.bar" project - Problem 3.3
 Program Description:
 
@@ -134,4 +134,4 @@ if __name__ == '__main__':
         print answer(digest)
 
     else:
-        print 'usage: hash_it_out -case1|case2'
+        print '\nusage: hash_it_out -case1|case2\n'
