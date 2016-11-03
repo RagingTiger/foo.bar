@@ -100,24 +100,24 @@ def answer(x, y, n):
             return f
 
     # creating stirling triangle
-    def gen_stirling(n):
+    def gen_stirling(p, n):
         '''
-        Function to creat stirling numbers.
+        Function to create stirling numbers.
         '''
         # initialize [n k] = [0 0] to 1
-        s = [[1]]
+        s = [1]
 
         # building stirling triangle
         for i in range(1, n + 1):
             # initialize k=0 partition to 0
             r = [0]
             for k in range(1, i):
-                r.append((i-1)*s[i-1][k] + s[i-1][k-1])
+                r.append((i-1)*s[k] + s[k-1])
             r.append(1)
-            s.append(r[:])
+            s = r[:]
 
         # return numbers
-        return s
+        return s[p]
 
     # calculate number of partitions
     left, right = x-1, y-1
@@ -130,10 +130,10 @@ def answer(x, y, n):
     Ping = factorial(partitions)/(factorial(left)*factorial(right))
 
     # get stirling numbers
-    S = gen_stirling(rabbits)
+    S = gen_stirling(partitions, rabbits)
 
     # get X.Y.N combos
-    return str(Ping * S[rabbits][partitions])
+    return str(Ping * S)
 
 
 # executable
@@ -156,4 +156,4 @@ if __name__ == '__main__':
         print answer(x, y, n)
 
     else:
-        sys.exit('\nusage: line_up_the_captives -case1|case2')
+        sys.exit('\nusage: line_up_the_captives -case1 | -case2 | -n x.y.n')
