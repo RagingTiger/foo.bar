@@ -104,3 +104,8 @@ if __name__ == '__main__':
     else:
         sys.exit('\nusage: minion_hierarchy (int)\n')
 ```
+As mentioned above, each problem set has a number (e.g. 1.1 as seen above),
+corresponding to the level of the challenge, where 1 is the basic level, and 5
+is the hardest level. Also, each level has **n** problems: level 1, has 1
+problem, 2 has 2 problems, 3 has 3 problems, etc ... hence the **n.n** number
+scheme.
