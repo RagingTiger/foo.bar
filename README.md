@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://github.com/RagingTiger/gifs/raw/master/foo.bar.gif"/>
+</p>
+
 ##Purpose
 This repository contains all of my completed Google [foobar](https://foobar.withgoogle.com/) problem sets.
 I made the problem sets available  for anyone who wants to learn what types of
@@ -6,11 +11,6 @@ For some context, the foobar challenge is a recruiting tactic that Google uses.
 If you use Google search, and you search something of "interest" to Google,
 (e.g. list comprehension python) they will present this challenge, in browser
 to you. If you accept, you are taken to the challenge.
-
-## Usage
-<p align="center">
-  <img src="https://github.com/RagingTiger/gifs/raw/master/foo.bar.gif"/>
-</p>
 
 ## Description
 Each program in the repository, named after the problem set from the
