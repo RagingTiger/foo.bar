@@ -86,7 +86,7 @@ def answer(chunk, word):
         clen = len(chunkee)
 
         # check chunk
-        for i, _ in enumerate(chunkee):
+        for i, __ in enumerate(chunkee):
 
             if chunkee[i:i+wlen] == word:
                 new_chunk = chunk[0:i].replace(word, '') \
