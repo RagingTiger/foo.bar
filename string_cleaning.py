@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: string_cleaning [-m chunk word] -case1|case2|case3
+Usage: string_cleaning -m chunk word | -case1 | -case2 | -case3
 Origin: Google "foo.bar" project - Problem 3.2
 Problem Description:
 
@@ -107,26 +107,44 @@ def answer(chunk, word):
 # executable
 if __name__ == '__main__':
 
-    # check CLA
+    # usage message
+    usage = '\nUsage: string_cleaning -m chunk word | -case1 ' \
+            '| -case2 | -case3\n'
+
+    # CLA check
     if len(sys.argv) == 2:
 
         if sys.argv[1] == '-case1':
-            print '\nFinal List: {0}'.format(answer('aaabbb', 'ab'))
-            sys.exit()
+            chunk = 'aaabbb'
+            word = 'ab'
 
         elif sys.argv[1] == '-case2':
-            print '\nFinal List: {0}'.format(answer('lololololo', 'lol'))
-            sys.exit()
+            chunk = 'lololololo'
+            word = 'lol'
 
         elif sys.argv[1] == '-case3':
-            print '\nFinal List: {0}'.format(answer('goodgooogoogfogoood',
-                                                    'goo'))
-            sys.exit()
+            chunk = 'goodgooogoogfogoood'
+            word = 'goo'
 
+        # wrong arguments passed
+        else:
+            sys.exit(usage)
+
+        # correct arguments passed
+        print '\nFinal List: {0}'.format(answer(chunk, word))
+        sys.exit()
+
+    # choose chunk and word
     elif len(sys.argv) > 3:
         if sys.argv[1] == '-m':
-            print '\nFinal List: {0}'.format(answer(sys.argv[2], sys.argv[3]))
+            chunk = sys.argv[2]
+            word = sys.argv[3]
+            print '\nFinal List: {0}'.format(answer(chunk, word))
             sys.exit()
 
-    sys.exit('\nusage: string_cleaning [-m chunk word]'
-             ' -case1|case2|case3\n')
+        # wrong arguments passed
+        else:
+            sys.exit(usage)
+
+    # no arguments passed
+    sys.exit(usage)
