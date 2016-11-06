@@ -112,11 +112,11 @@ if __name__ == '__main__':
         elif sys.argv[1] == '-case3':
             x = ["a", "b", "c", "a", "a", "foo", "bar", "foo", "oof", "rab"]
 
-        # wrong argument passed
+        # wrong arguments passed
         else:
             sys.exit(usage)
 
-        # correct arguments used
+        # correct arguments passed
         print answer(x)
         sys.exit()
 
