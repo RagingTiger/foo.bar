@@ -9,7 +9,7 @@ Program Description:
     Minion hierarchy
     ================
 
-    Rumor has it there's a mad scientist out there who had abducted hundres of
+    Rumor has it there's a mad scientist out there who had abducted hundreds of
     rabbits to test out a new zombie serum.
 
     Agent Beta Rabbit, spy and brilliant mathematician, storms in the room:
