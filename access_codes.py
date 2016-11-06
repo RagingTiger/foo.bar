@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: access_codes -case1|case2|case3
+Usage: access_codes -case1 | -case2 | -case3
 Origin: Google "foo.bar" project - Problem 2.2
 Problem Description:
 
@@ -97,19 +97,28 @@ def answer(x):
 # executable
 if __name__ == '__main__':
 
+    # usage message
+    usage = '\nusage: access_codes -case1 | -case2 | -case3\n'
+
+    # CLA check
     if len(sys.argv) == 2:
 
         if sys.argv[1] == '-case1':
             x = ["foo", "bar", "oof", "bar"]
-            print answer(x)
 
         elif sys.argv[1] == '-case2':
             x = ["x", "y", "xy", "yy", "", "yx"]
-            print answer(x)
 
         elif sys.argv[1] == '-case3':
             x = ["a", "b", "c", "a", "a", "foo", "bar", "foo", "oof", "rab"]
-            print answer(x)
 
-    else:
-        sys.exit('\nusage: access_codes -case1|case2|case3\n')
+        # wrong argument passed
+        else:
+            sys.exit(usage)
+
+        # correct arguments used
+        print answer(x)
+        sys.exit()
+
+    # no arguments passed
+    sys.exit(usage)
