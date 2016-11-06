@@ -167,5 +167,5 @@ if __name__ == '__main__':
         print answer(x, y, n)
         sys.exit()
 
-    # no required argument passed
+    # no argument passed
     sys.exit(usage)
