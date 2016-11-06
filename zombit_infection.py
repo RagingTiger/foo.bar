@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Program: zombit_infection.py -case1|case1
+Program: zombit_infection.py -case1 | -case1
 Origin: Google "foo.bar" project - Problem 2.1
 Problem Description:
 
@@ -159,6 +159,10 @@ def answer(population, x, y, strength):
 # executable
 if __name__ == '__main__':
 
+    # ussage message
+    usage = '\nUsage: zombit_infection -case1 | -case2\n'
+
+    # CLA check
     if len(sys.argv) == 2:
 
         if sys.argv[1] == '-case1':
@@ -174,8 +178,13 @@ if __name__ == '__main__':
             y = 1
             strength = 5
 
-        # print population
-        print answer(population, x, y, strength)
+        # wrong arguments passed
+        else:
+            sys.exit(usage)
 
-    else:
-        print '\nusage: zombit_infection -case1|case2\n'
+        # correct agurments passed
+        print answer(population, x, y, strength)
+        sys.exit()
+
+    # no arguments passed
+    sys.exit(usage)
