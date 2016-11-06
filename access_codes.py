@@ -98,7 +98,7 @@ def answer(x):
 if __name__ == '__main__':
 
     # usage message
-    usage = '\nusage: access_codes -case1 | -case2 | -case3\n'
+    usage = '\nUsage: access_codes -case1 | -case2 | -case3\n'
 
     # CLA check
     if len(sys.argv) == 2:
