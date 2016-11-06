@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: hash_it_out -case1|case2
+Usage: hash_it_out -case1 | -case2
 Origin: Google "foo.bar" project - Problem 3.3
 Program Description:
 
@@ -121,8 +121,12 @@ def answer(digest):
 
 # executable
 if __name__ == '__main__':
-    # CLA
-    if sys.argv > 1:
+
+    # usage message
+    usage = '\nUsage: hash_it_out -case1 | -case2\n'
+
+    # CLA check
+    if len(sys.argv) > 1:
         if sys.argv[1] == '-case1':
             digest = [0, 129, 3, 129, 7, 129, 3, 129, 15, 129, 3, 129, 7,
                       129, 3, 129]
@@ -131,7 +135,13 @@ if __name__ == '__main__':
             digest = [0, 129, 5, 141, 25, 137, 61, 149, 113, 145, 53, 157,
                       233, 185, 109, 165]
 
-        print answer(digest)
+        # wrong arguments passed
+        else:
+            sys.exit(usage)
 
-    else:
-        print '\nusage: hash_it_out -case1|case2\n'
+        # correct arguments passed
+        print answer(digest)
+        sys.exit()
+
+    # no arguments passed
+    sys.exit(usage)
