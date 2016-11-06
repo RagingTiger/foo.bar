@@ -159,11 +159,11 @@ if __name__ == '__main__':
             x, y, n = [int(x) for x in sys.argv[2].split('.')]
             print 'x={0}, y={1}, n={2}'.format(x, y, n)
 
-        # wrong argument used
+        # wrong arguments passed
         else:
             sys.exit(usage)
 
-        # correct arguments used
+        # correct arguments passed
         print answer(x, y, n)
         sys.exit()
 
