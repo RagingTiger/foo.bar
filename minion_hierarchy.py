@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: minion_hierarchy (int)
+Usage: minion_hierarchy -n integer
 Origin: Google "foo.bar" project - Problem 1.1
 Program Description:
 
@@ -74,11 +74,22 @@ def answer(x):
         y += 7**i
     return y
 
+
 # executable
 if __name__ == '__main__':
 
-    if len(sys.argv) == 2:
-        print answer(int(sys.argv[1]))
+    # usage message
+    usage = '\nUsage: minion_hierarchy -n integer\n'
 
-    else:
-        sys.exit('\nusage: minion_hierarchy (int)\n')
+    # CLA check
+    if len(sys.argv) > 1:
+        if sys.argv[1] == '-n':
+            print answer(int(sys.argv[2]))
+            sys.exit()
+
+        # wrong arguments passed
+        else:
+            sys.exit(usage)
+
+    # no arguments passed
+    sys.exit(usage)
