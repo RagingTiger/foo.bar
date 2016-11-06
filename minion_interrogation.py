@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: minion_interrogation -case1|case2|case3|case4
+Usage: minion_interrogation -case1 | -case2 | -case3 | -case4
 Origin: Google "foo.bar" project - Problem 3.1
 Problem Description:
 
@@ -126,29 +126,32 @@ def answer(minions):
 # executable
 if __name__ == '__main__':
 
-    ex1 = [[5, 1, 5], [10, 1, 2]]
+    # usage message
+    usage = '\nUsage: minion_interrogation -case1 | -case2 | -case3 | -case4\n'
 
-    ex2 = [[390, 185, 624], [686, 351, 947], [276, 1023, 1024],
-           [199, 148, 250]]
-
-    ex3 = [[5, 1, 5], [10, 1, 2], [5, 1, 5], [10, 1, 2]]
-
-    ex4 = [[10, 1, 2], [3, 1, 3], [4, 1, 8]]
-
-    # check CLA
-    if len(sys.argv) == 2:
+    # CLA check
+    if len(sys.argv) > 1:
 
         if sys.argv[1] == '-case1':
-            print answer(ex1)
+            minions = [[5, 1, 5], [10, 1, 2]]
 
         elif sys.argv[1] == '-case2':
-            print answer(ex2)
+            minions = [[390, 185, 624], [686, 351, 947], [276, 1023, 1024],
+                       [199, 148, 250]]
 
         elif sys.argv[1] == '-case3':
-            print answer(ex3)
+            minions = [[5, 1, 5], [10, 1, 2], [5, 1, 5], [10, 1, 2]]
 
         elif sys.argv[1] == '-case4':
-            print answer(ex4)
+            minions = [[10, 1, 2], [3, 1, 3], [4, 1, 8]]
 
-    else:
-        sys.exit('\nusage: minion_interrogation -case1|case2|case3|case4\n')
+        # wrong arguments passed
+        else:
+            sys.exit(usage)
+
+        # correct arguments passed
+        print answer(minions)
+        sys.exit()
+
+    # no arguments passed
+    sys.exit(usage)
