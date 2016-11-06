@@ -2,7 +2,7 @@
 
 '''
 Author: John D. Anderson (TigerJ)
-Usage: line_up_the_captives
+Usage: line_up_the_captives -case1 | -case2 | -n x.y.n
 Origin: Google "foo.bar" project - Problem 4.1
 Program Description:
 
@@ -126,7 +126,8 @@ def answer(x, y, n):
     # calcule number of partitioning rabbits
     rabbits = n-1
 
-    # p coefficient
+    # p coefficient named after Ping Guo who found it:
+    # ref: https://github.com/PingGuo0201
     Ping = factorial(partitions)/(factorial(left)*factorial(right))
 
     # get stirling numbers
@@ -138,6 +139,11 @@ def answer(x, y, n):
 
 # executable
 if __name__ == '__main__':
+
+    # usage info
+    usage = '\nUsage: line_up_the_captives -case1 | -case2 | -n x.y.n\n'
+
+    # CLA check
     if len(sys.argv) > 1:
         if sys.argv[1] == '-case1':
             x = 2
@@ -151,9 +157,15 @@ if __name__ == '__main__':
 
         elif sys.argv[1] == '-n':
             x, y, n = [int(x) for x in sys.argv[2].split('.')]
-            print 'x={0}, y={1}, n={2}\n'.format(x, y, n)
+            print 'x={0}, y={1}, n={2}'.format(x, y, n)
 
+        # wrong argument used
+        else:
+            sys.exit(usage)
+
+        # correct arguments used
         print answer(x, y, n)
+        sys.exit()
 
-    else:
-        sys.exit('\nusage: line_up_the_captives -case1 | -case2 | -n x.y.n')
+    # no required argument passed
+    sys.exit(usage)
